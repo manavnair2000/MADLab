@@ -1,6 +1,7 @@
 package com.example.madexperiments;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,7 +26,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    float font = 20;
+    int count=1;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -85,8 +87,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void changeFFace(View view) {
+        TextView texthome = findViewById(R.id.text_home);
+        switch(count){
+            case 1:
+                texthome.setTypeface(Typeface.DEFAULT,Typeface.ITALIC);
+                break;
+            case 2:
+                texthome.setTypeface(Typeface.MONOSPACE,Typeface.NORMAL);
+                break;
+            case 3:
+                texthome.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD);
+                break;
+            case 4:
+                texthome.setTypeface(Typeface.SERIF,Typeface.ITALIC);
+                break;
+        }
+        count++;
+        if(count==5){
+            count=1;
+        }
     }
 
     public void changeFSize(View view) {
+        TextView texthome = findViewById(R.id.text_home);
+        texthome.setTextSize(font);
+        font +=5;
+        if(font==40){
+            font = 20;
+        }
+
     }
 }
