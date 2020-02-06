@@ -1,5 +1,6 @@
 package com.example.madexperiments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -65,5 +69,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void changeFColor(View view)
+    {
+        TextView tv1 = findViewById(R.id.text_home);
+
+        if(tv1.getCurrentTextColor()== Color.BLACK){
+
+        tv1.setTextColor(Color.RED);
+
+        }
+        else {
+        tv1.setTextColor(Color.BLACK);
+        }
+    }
+    public void changeFFace(View view) {
+    }
+
+    public void changeFSize(View view) {
     }
 }

@@ -8,6 +8,9 @@
     <string name="action_settings">Settings</string>
 
     <string name="exp_1">Experiment 1</string>
+    <string name="ex1_btn1_text">Change Font Colour</string>
+    <string name="ex1_btn2_text">Change Font Size</string>
+    <string name="ex1_btn3_text">Change Font Face</string>
     <string name="exp_2">Experiment 2</string>
     <string name="exp_3">Experiment 3</string>
     <string name="exp_4">Experiment 4</string>
