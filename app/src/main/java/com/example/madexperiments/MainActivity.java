@@ -23,11 +23,18 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     float font = 20;
     int count=1;
+    String name, gender, dept, college, mail;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -119,6 +126,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ToastMe(View view) {
+
+        final EditText etn = findViewById(R.id.editText);
+        final EditText etc = findViewById(R.id.editText2);
+        final EditText ete = findViewById(R.id.editText3);
+
+        RadioGroup rg = findViewById(R.id.radioGroup1);
+        final RadioButton r1 = findViewById(R.id.radioButton);
+        final RadioButton r2 = findViewById(R.id.radioButton2);
+        final Spinner s = findViewById(R.id.spinner1);
+        Button b = findViewById(R.id.button);
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(r1.isChecked() == true)
+                    dept = "Male";
+                if(r2.isChecked() == true)
+                    dept = "Female";
+            }
+        });
+        name = etn.getText().toString();
+        college=etc.getText().toString();
+        mail = ete.getText().toString();
+        gender = s.getSelectedItem().toString();
+        Toast.makeText(getApplicationContext(),"Name:" + name +"\nCollege:"+ college+ "\nemail"+ mail + "\nDepartment:" + gender + " \nGender:" + dept , Toast.LENGTH_SHORT).show();
 
     }
 }

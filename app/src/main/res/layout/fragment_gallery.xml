@@ -61,6 +61,7 @@
         android:text="TOAST ME" />
 
     <RadioGroup
+        android:id="@+id/radioGroup1"
         android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText3"
@@ -98,4 +99,21 @@
         android:layout_marginEnd="213dp"
         android:text="Enter your details"
         android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="127dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="350dp"
+        android:entries="@array/department" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="145dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="350dp"
+        android:text="Department:"
+        android:textSize="24sp" />
+
 </RelativeLayout>

@@ -16,4 +16,14 @@
     <string name="exp_4">Experiment 4</string>
     <string name="exp_5">Experiment 5</string>
     <string name="exp_6">Experiment 6</string>
+    <string-array name="department">
+        <item>BE CSE</item>
+        <item>BE IT</item>
+        <item>BE MECH</item>
+        <item>BE CIVIL</item>
+        <item>BE AUTO</item>
+        <item>BE EEE</item>
+        <item>BE ECE</item>
+    </string-array>
+
 </resources>
