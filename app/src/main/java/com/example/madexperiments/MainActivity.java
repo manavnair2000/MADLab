@@ -135,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton r1 = findViewById(R.id.radioButton);
         final RadioButton r2 = findViewById(R.id.radioButton2);
         final Spinner s = findViewById(R.id.spinner1);
-        Button b = findViewById(R.id.button);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
