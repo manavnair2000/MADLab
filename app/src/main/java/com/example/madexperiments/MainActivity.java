@@ -1,5 +1,7 @@
 package com.example.madexperiments;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     String name, gender, dept, college, mail;
     private AppBarConfiguration mAppBarConfiguration;
 
+    SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        //db.openOrCreateDatabase("StudentDB",null);
+        //db.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,marks VARCHAR);");
     }
 
 
@@ -89,9 +95,11 @@ public class MainActivity extends AppCompatActivity {
         tv1.setTextColor(Color.RED);
 
         }
-        else {
-        tv1.setTextColor(Color.BLACK);
+        else if(tv1.getCurrentTextColor()== Color.RED){
+        tv1.setTextColor(Color.GREEN);
         }
+        else if(tv1.getCurrentTextColor()== Color.GREEN)
+            tv1.setTextColor(Color.BLACK);
     }
     public void changeFFace(View view) {
         TextView texthome = findViewById(R.id.text_home);
@@ -154,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void add(View view) {
         //add to database
+        EditText editRollno = findViewById(R.id.editRollno);
+        EditText editName = findViewById(R.id.editName);
+        EditText editMarks = findViewById(R.id.editMarks);
     }
 
     public void delete(View view) {

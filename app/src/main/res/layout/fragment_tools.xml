@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editName"
         android:layout_width="377dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -28,10 +28,10 @@
         android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/editRollno" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editRollno"
         android:layout_width="377dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_tools" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editMarks"
         android:layout_width="379dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -52,7 +52,7 @@
         android:hint="Marks"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <Button
         android:id="@+id/button2"
@@ -62,7 +62,7 @@
         android:layout_marginTop="24dp"
         android:text="ADD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editMarks"
         android:onClick="add"/>
 
     <Button
@@ -73,7 +73,7 @@
         android:layout_marginTop="24dp"
         android:text="DELETE"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editMarks"
         android:onClick="delete"/>
 
     <Button
@@ -84,7 +84,7 @@
         android:layout_marginTop="24dp"
         android:text="MODIFY"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editMarks"
         android:onClick="modify"/>
 
     <Button
@@ -95,7 +95,7 @@
         android:layout_marginTop="24dp"
         android:text="VIEW"
         app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editMarks"
         android:onClick="view"/>
 
     <Button
