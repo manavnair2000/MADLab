@@ -151,4 +151,26 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Name:" + name +"\nCollege:"+ college+ "\nemail"+ mail + "\nDepartment:" + gender + " \nGender:" + dept , Toast.LENGTH_SHORT).show();
 
     }
+
+    public void add(View view) {
+        //add to database
+    }
+
+    public void delete(View view) {
+        //delete from database
+    }
+
+    public void modify(View view) {
+        //modify the data in database
+    }
+
+    public void view(View view) {
+        //view one row in database
+    }
+
+    public void viewAll(View view) {
+        //view all data in database
+        StringBuffer buffer = new StringBuffer();
+
+    }
 }
