@@ -1,16 +1,17 @@
-package com.example.madexperiments.ui.send;
+package com.example.madexperiments.ui.experiment_1;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class ExperimentOneViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public ExperimentOneViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("Hello World! This is MAD Lab");
+
     }
 
     public LiveData<String> getText() {

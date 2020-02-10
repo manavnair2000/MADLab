@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.home;
+package com.example.madexperiments.ui.experiment_1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class HomeFragment extends Fragment {
+public class ExperimentOne extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ExperimentOneViewModel experimentOneViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        experimentOneViewModel =
+                ViewModelProviders.of(this).get(ExperimentOneViewModel.class);
+        View root = inflater.inflate(R.layout.experiment_1, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        experimentOneViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

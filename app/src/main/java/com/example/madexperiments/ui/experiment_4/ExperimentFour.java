@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.tools;
+package com.example.madexperiments.ui.experiment_4;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class ToolsFragment extends Fragment {
+public class ExperimentFour extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private ExperimentFourViewModel experimentFourViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
+        experimentFourViewModel =
+                ViewModelProviders.of(this).get(ExperimentFourViewModel.class);
+        View root = inflater.inflate(R.layout.experiment_4, container, false);
         final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        experimentFourViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

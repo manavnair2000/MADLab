@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.share;
+package com.example.madexperiments.ui.experiment_2;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class ShareFragment extends Fragment {
+public class ExperimentTwo extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private ExperimentTwoViewModel experimentTwoViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        experimentTwoViewModel =
+                ViewModelProviders.of(this).get(ExperimentTwoViewModel.class);
+        View root = inflater.inflate(R.layout.experiment_2, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        experimentTwoViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

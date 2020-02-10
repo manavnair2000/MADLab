@@ -1,16 +1,16 @@
-package com.example.madexperiments.ui.share;
+package com.example.madexperiments.ui.experiment_3;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class ExperimentThreeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public ExperimentThreeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("Basic Graphical Primitives");
     }
 
     public LiveData<String> getText() {

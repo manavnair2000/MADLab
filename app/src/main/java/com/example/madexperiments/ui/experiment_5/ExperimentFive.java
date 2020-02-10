@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.send;
+package com.example.madexperiments.ui.experiment_5;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class SendFragment extends Fragment {
+public class ExperimentFive extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private ExperimentFiveViewModel experimentFiveViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        experimentFiveViewModel =
+                ViewModelProviders.of(this).get(ExperimentFiveViewModel.class);
+        View root = inflater.inflate(R.layout.experiment_5, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        experimentFiveViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

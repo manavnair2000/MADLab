@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.slideshow;
+package com.example.madexperiments.ui.experiment_3;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -18,9 +18,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class SlideshowFragment extends Fragment {
+public class ExperimentThree extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private ExperimentThreeViewModel experimentThreeViewModel;
 
     public class SampleCanvas extends View{
 
@@ -47,15 +47,15 @@ public class SlideshowFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
+        experimentThreeViewModel =
+                ViewModelProviders.of(this).get(ExperimentThreeViewModel.class);
 
 
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        View root = inflater.inflate(R.layout.experiment_3, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
         ConstraintLayout constraintLayout = root.findViewById(R.id.exp3_layout);
         constraintLayout.addView(new SampleCanvas(getActivity()));
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        experimentThreeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

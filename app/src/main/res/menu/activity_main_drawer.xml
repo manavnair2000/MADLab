@@ -5,27 +5,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_exp1"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_1" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_exp2"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_2" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_exp3"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_3" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_exp4"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_4" />
         <item
-            android:id="@+id/nav_share"
+            android:id="@+id/nav_exp5"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_5" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_exp6"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_6" />
 
@@ -34,11 +34,11 @@
 <!--    <item android:title="Communicate">-->
 <!--        <menu>-->
 <!--            <item-->
-<!--                android:id="@+id/nav_share"-->
+<!--                android:id="@+id/nav_exp5-->
 <!--                android:icon="@drawable/ic_menu_share"-->
 <!--                android:title="@string/menu_share" />-->
 <!--            <item-->
-<!--                android:id="@+id/nav_send"-->
+<!--                android:id="@+id/nav_exp6"-->
 <!--                android:icon="@drawable/ic_menu_send"-->
 <!--                android:title="@string/menu_send" />-->
 <!--        </menu>-->

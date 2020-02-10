@@ -3,41 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_exp1">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.madexperiments.ui.home.HomeFragment"
+        android:id="@+id/nav_exp1"
+        android:name="com.example.madexperiments.ui.experiment_1.ExperimentOne"
         android:label="@string/exp_1"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/experiment_1" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.madexperiments.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_exp2"
+        android:name="com.example.madexperiments.ui.experiment_2.ExperimentTwo"
         android:label="@string/exp_2"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/experiment_2" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.madexperiments.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_exp3"
+        android:name="com.example.madexperiments.ui.experiment_3.ExperimentThree"
         android:label="@string/exp_3"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/experiment_3" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.madexperiments.ui.tools.ToolsFragment"
+        android:id="@+id/nav_exp4"
+        android:name="com.example.madexperiments.ui.experiment_4.ExperimentFour"
         android:label="@string/exp_4"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/experiment_4" />
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.madexperiments.ui.share.ShareFragment"
+        android:id="@+id/nav_exp5"
+        android:name="com.example.madexperiments.ui.experiment_5.ExperimentFive"
         android:label="@string/exp_5"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/experiment_5" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.madexperiments.ui.send.SendFragment"
+        android:id="@+id/nav_exp6"
+        android:name="com.example.madexperiments.ui.experiment_6.ExperimentSix"
         android:label="@string/exp_6"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/experiment_6" />
 </navigation>

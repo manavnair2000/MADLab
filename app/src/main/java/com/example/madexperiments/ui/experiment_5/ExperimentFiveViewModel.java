@@ -1,16 +1,16 @@
-package com.example.madexperiments.ui.slideshow;
+package com.example.madexperiments.ui.experiment_5;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class ExperimentFiveViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public ExperimentFiveViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Basic Graphical Primitives");
+        mText.setValue("This is experiment_5 fragment");
     }
 
     public LiveData<String> getText() {

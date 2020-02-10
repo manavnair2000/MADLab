@@ -1,4 +1,4 @@
-package com.example.madexperiments.ui.gallery;
+package com.example.madexperiments.ui.experiment_6;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.madexperiments.R;
 
-public class GalleryFragment extends Fragment {
+public class ExperimentSix extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private ExperimentSixViewModel experimentSixViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        experimentSixViewModel =
+                ViewModelProviders.of(this).get(ExperimentSixViewModel.class);
+        View root = inflater.inflate(R.layout.experiment_6, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        experimentSixViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

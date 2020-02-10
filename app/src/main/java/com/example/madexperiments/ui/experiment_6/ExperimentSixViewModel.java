@@ -1,17 +1,16 @@
-package com.example.madexperiments.ui.home;
+package com.example.madexperiments.ui.experiment_6;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class ExperimentSixViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public ExperimentSixViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Hello World! This is MAD Lab");
-
+        mText.setValue("This is experiment_6 fragment");
     }
 
     public LiveData<String> getText() {
