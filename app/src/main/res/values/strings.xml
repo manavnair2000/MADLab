@@ -16,6 +16,8 @@
     <string name="exp_4">Experiment 4</string>
     <string name="exp_5">Experiment 5</string>
     <string name="exp_6">Experiment 6</string>
+    <string name="notify_exp">Notification Experiment</string>
+    <string name="notify_button_exp">Notify Me</string>
     <string-array name="department">
         <item>BE CSE</item>
         <item>BE IT</item>

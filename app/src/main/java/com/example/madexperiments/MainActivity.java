@@ -1,5 +1,7 @@
 package com.example.madexperiments;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -7,11 +9,14 @@ import android.os.Bundle;
 
 import android.view.View;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.madexperiments.ui.experiment_5.ExperimentFive;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -176,6 +181,26 @@ public class MainActivity extends AppCompatActivity {
     public void viewAll(View view) {
         //view all data in database
         StringBuffer buffer = new StringBuffer();
+
+    }
+
+    public void notifyMe(View view) {
+        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
+        NotificationCompat.Builder noti = new NotificationCompat.Builder(this,"M_CH_ID");
+        noti.setContentTitle("1 New Message");
+        noti.setContentText("Hi click me to launch activity");
+        noti.setSmallIcon(android.R.drawable.ic_btn_speak_now);
+
+        Intent i1 = new Intent(this, ExperimentFive.class);
+        PendingIntent pd = PendingIntent.getActivity(this,1,i1,0);
+        noti.setContentIntent(pd);
+        noti.setAutoCancel(true);
+        Toast.makeText(MainActivity.this, "Notify user", Toast.LENGTH_SHORT).show();
+
+        manager.notify(1,noti.build());
+        finish();
+
+
 
     }
 }
