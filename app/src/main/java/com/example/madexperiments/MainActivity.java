@@ -1,10 +1,13 @@
 package com.example.madexperiments;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.view.View;
@@ -184,6 +187,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("M_CH_ID", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
     public void notifyMe(View view) {
         NotificationManagerCompat manager = NotificationManagerCompat.from(this);
         NotificationCompat.Builder noti = new NotificationCompat.Builder(this,"M_CH_ID");
@@ -191,6 +210,10 @@ public class MainActivity extends AppCompatActivity {
         noti.setContentText("Hi click me to launch activity");
         noti.setSmallIcon(android.R.drawable.ic_btn_speak_now);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+        }
+        else{
         Intent i1 = new Intent(this, ExperimentFive.class);
         PendingIntent pd = PendingIntent.getActivity(this,1,i1,0);
         noti.setContentIntent(pd);
