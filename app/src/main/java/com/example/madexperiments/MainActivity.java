@@ -206,11 +206,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void notifyMe(View view) {
         // Create an explicit intent for an Activity in your app
-        Intent intent = new Intent(this, ExperimentFive.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "M_CH_ID")
                 .setSmallIcon(android.R.drawable.ic_btn_speak_now)
                 .setContentTitle("My notification")
                 .setContentText("Hello World!")
@@ -222,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
 
 // notificationId is a unique int for each notification that you must define
         notificationManager.notify(1, builder.build());
+        finish();
 //        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
 //        NotificationCompat.Builder noti = new NotificationCompat.Builder(this,"M_CH_ID");
 //        noti.setContentTitle("1 New Message");
