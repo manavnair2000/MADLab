@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        createNotificationChannel();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -204,26 +205,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void notifyMe(View view) {
-        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
-        NotificationCompat.Builder noti = new NotificationCompat.Builder(this,"M_CH_ID");
-        noti.setContentTitle("1 New Message");
-        noti.setContentText("Hi click me to launch activity");
-        noti.setSmallIcon(android.R.drawable.ic_btn_speak_now);
+        // Create an explicit intent for an Activity in your app
+        Intent intent = new Intent(this, ExperimentFive.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
+                .setSmallIcon(android.R.drawable.ic_btn_speak_now)
+                .setContentTitle("My notification")
+                .setContentText("Hello World!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
-        }
-        else{
-        Intent i1 = new Intent(this, ExperimentFive.class);
-        PendingIntent pd = PendingIntent.getActivity(this,1,i1,0);
-        noti.setContentIntent(pd);
-        noti.setAutoCancel(true);
-        Toast.makeText(MainActivity.this, "Notify user", Toast.LENGTH_SHORT).show();
+// notificationId is a unique int for each notification that you must define
+        notificationManager.notify(1, builder.build());
+//        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
+//        NotificationCompat.Builder noti = new NotificationCompat.Builder(this,"M_CH_ID");
+//        noti.setContentTitle("1 New Message");
+//        noti.setContentText("Hi click me to launch activity");
+//        noti.setSmallIcon(android.R.drawable.ic_btn_speak_now);
 
-        manager.notify(1,noti.build());
-        finish();
-
-
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//
+//        }
+//        else {
+//            Intent i1 = new Intent(this, ExperimentFive.class);
+//            PendingIntent pd = PendingIntent.getActivity(this, 1, i1, 0);
+//            noti.setContentIntent(pd);
+//            noti.setAutoCancel(true);
+//            Toast.makeText(MainActivity.this, "Notify user", Toast.LENGTH_SHORT).show();
+//
+//            manager.notify(1, noti.build());
+//            finish();
+//
+//        }
 
     }
 }
