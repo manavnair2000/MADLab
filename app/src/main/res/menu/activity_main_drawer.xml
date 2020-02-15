@@ -28,6 +28,10 @@
             android:id="@+id/nav_exp6"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/exp_6" />
+        <item
+            android:id="@+id/nav_exp7"
+            android:icon="@drawable/ic_label_outline_black_24dp"
+            android:title="@string/exp_7" />
 
     </group>
 
