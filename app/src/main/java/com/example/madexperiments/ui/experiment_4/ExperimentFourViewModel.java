@@ -10,6 +10,8 @@ public class ExperimentFourViewModel extends ViewModel {
 
     public ExperimentFourViewModel() {
         mText = new MutableLiveData<>();
+        mText.setValue("Database Experiment");
+
     }
 
     public LiveData<String> getText() {

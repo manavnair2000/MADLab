@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/editMarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Marks"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editRollno" />
 
     <TextView
         android:id="@+id/text_tools"
@@ -13,100 +40,77 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editName"
-        android:layout_width="377dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRollno" />
-
-    <EditText
         android:id="@+id/editRollno"
-        android:layout_width="377dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:ems="10"
         android:hint="Roll Number"
-        android:inputType="number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_tools" />
 
-    <EditText
-        android:id="@+id/editMarks"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Marks"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="74dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="ADD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMarks"
-        android:onClick="add"/>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="78dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="DELETE"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/editMarks"
-        android:onClick="delete"/>
-
-    <Button
-        android:id="@+id/button4"
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="MODIFY"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/editMarks"
-        android:onClick="modify"/>
+        android:layout_marginBottom="16dp"
+        android:text="This is not sponsored by RealMe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="VIEW"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/editMarks"
-        android:onClick="view"/>
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="370dp"
+        android:id="@+id/addMe"
+        android:layout_width="133dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="SHOW ME EVERYTHING !!!!"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:onClick="viewAll"/>
+        android:layout_marginBottom="12dp"
+        android:text="ADD ME"
+        app:layout_constraintBottom_toTopOf="@+id/showMe"
+        app:layout_constraintLeft_toLeftOf="@id/editMarks"
+        app:layout_constraintStart_toStartOf="@+id/showMe" />
 
+    <Button
+        android:id="@+id/deleteMe"
+        android:layout_width="152dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:text="DELETE ME"
+        app:layout_constraintBottom_toTopOf="@+id/modifyMe"
+        app:layout_constraintEnd_toEndOf="@+id/modifyMe" />
+
+    <Button
+        android:id="@+id/modifyMe"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="24dp"
+        android:text="MODIFY ME"
+        app:layout_constraintBottom_toTopOf="@+id/showMeall"
+        app:layout_constraintEnd_toEndOf="@+id/showMeall" />
+
+    <Button
+        android:id="@+id/showMe"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="24dp"
+        android:text="SHOW ME"
+        app:layout_constraintBottom_toTopOf="@+id/showMeall"
+        app:layout_constraintStart_toStartOf="@+id/showMeall" />
+
+    <Button
+        android:id="@+id/showMeall"
+        android:layout_width="339dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="16dp"
+        android:text="SHOW EVERTHING TO ME !!!!!!"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
