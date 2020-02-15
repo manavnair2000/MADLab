@@ -20,6 +20,7 @@
     <string name="notify_button_exp">Notify Me</string>
     <string name="channel_name">Main Notifications</string>
     <string name="channel_description">Make a wish to disable this notification</string>
+    <string name="exp_7">Experiment 7</string>
     <string-array name="department">
         <item>BE CSE</item>
         <item>BE IT</item>

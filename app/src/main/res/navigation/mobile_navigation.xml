@@ -40,4 +40,9 @@
         android:name="com.example.madexperiments.ui.experiment_6.ExperimentSix"
         android:label="@string/exp_6"
         tools:layout="@layout/experiment_6" />
+    <fragment
+        android:id="@+id/nav_exp7"
+        android:name="com.example.madexperiments.ui.experiment_7.ExperimentSeven"
+        android:label="@string/exp_7"
+        tools:layout="@layout/experiment_7" />
 </navigation>

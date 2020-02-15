@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 
 import com.example.madexperiments.R;
 
-public class experiment_7 extends Fragment {
+public class ExperimentSeven extends Fragment {
 
     private ExperimentSevenViewModel mViewModel;
 
-    public static experiment_7 newInstance() {
-        return new experiment_7();
+    public static ExperimentSeven newInstance() {
+        return new ExperimentSeven();
     }
 
     @Override
