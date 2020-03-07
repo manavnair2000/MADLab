@@ -36,6 +36,18 @@
             android:id="@+id/nav_exp8"
             android:icon="@drawable/ic_label_outline_black_24dp"
             android:title="@string/experiment_8" />
+        <item
+            android:id="@+id/nav_exp9"
+            android:icon="@drawable/ic_label_outline_black_24dp"
+            android:title="Experiment 9" />
+        <item
+            android:id="@+id/nav_exp10"
+            android:icon="@drawable/ic_label_outline_black_24dp"
+            android:title="Experiment 10" />
+        <item
+            android:id="@+id/nav_exp11"
+            android:icon="@drawable/ic_label_outline_black_24dp"
+            android:title="Experiment 11" />
 
     </group>
 

@@ -374,5 +374,30 @@ public class MainActivity extends AppCompatActivity {
         e1.setText("");
 
     }
+
+    public void sendmail(View view){
+        EditText eto, esub, em;
+        Button bs;
+
+        eto = findViewById(R.id.eto);
+        esub = findViewById(R.id.esub);
+        em = findViewById(R.id.em);
+
+        String To  = eto.getText().toString();
+
+        String subject = esub.getText().toString();
+        String message = em.getText().toString();
+        Toast.makeText(getApplicationContext(),"Sending an email",Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{To});
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        intent.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(intent,"choose an application"));
+
+
+    }
     //Type your code here
 }
