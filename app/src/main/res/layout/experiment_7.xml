@@ -6,8 +6,18 @@
     tools:context=".ui.experiment_7.ExperimentSeven">
 
     <TextView
+        android:id="@+id/tvAddress"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
-
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGPSShowLocation"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowAddress"
+        />
 </FrameLayout>
