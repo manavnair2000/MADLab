@@ -58,6 +58,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -446,4 +450,54 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void write(View view){
+        EditText e1 = (EditText) findViewById(R.id.editText);
+
+        String message=e1.getText().toString();
+        try
+        {
+            File f=new File("/sdcard/myfile.txt");
+            f.createNewFile();
+            FileOutputStream fout=new FileOutputStream(f);
+            fout.write(message.getBytes());
+            fout.close();
+            Toast.makeText(getBaseContext(),"Data Written in SDCARD",Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(getBaseContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+    }
+    public void read(View view){
+        EditText e1 = (EditText) findViewById(R.id.editText);
+        String message;
+        String buf = "";
+        try
+        {
+            File f = new File("/sdcard/myfile.txt");
+            FileInputStream fin = new FileInputStream(f);
+            BufferedReader br = new BufferedReader(new InputStreamReader(fin));
+            while ((message = br.readLine()) != null)
+            {
+                buf += message;
+            }
+            e1.setText(buf);
+            br.close();
+            fin.close();
+            Toast.makeText(getBaseContext(),"Data from SDCARD",Toast.LENGTH_LONG).show();
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+    }
+    public void clear(View view){
+        EditText e1 = (EditText) findViewById(R.id.editText);
+        e1.setText("");
+
+    }
+    //Type your code here
 }
