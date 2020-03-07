@@ -72,13 +72,12 @@ import java.net.URL;
 import static androidx.core.content.ContextCompat.getSystemService;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int PERMISSION_ID = 44;
     FusedLocationProviderClient mFusedLocationClient;
     float font = 20;
     int count=1;
     String name, gender, dept, college, mail;
     private AppBarConfiguration mAppBarConfiguration;
-    AppLocationService appLocationService;
+
     SQLiteDatabase db;
 
     @Override
@@ -110,17 +109,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
         //db.openOrCreateDatabase("StudentDB",null);
         //db.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,marks VARCHAR);");
-        if(checkPermissions()){
-            if(!isLocationEnabled()){
-                showSettingsAlert();
-            }
-            else{
-                updateLocation();
-            }
-        }
-        else{
-            requestPermissions();
-        }
+
     }
 
 
@@ -335,121 +324,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
-    private boolean checkPermissions(){
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            return true;
-        }
-        return false;
-    }
-    private void requestPermissions(){
-        ActivityCompat.requestPermissions(
-                this,
-                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ID
-        );
-    }
-    private boolean isLocationEnabled(){
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-                LocationManager.NETWORK_PROVIDER
-        );
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_ID) {
-            if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                // Granted. Start getting the location information
-            }
-        }
-    }
 
-    public void showSettingsAlert() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(
-                MainActivity.this);
-        alertDialog.setTitle("SETTINGS");
-        alertDialog.setMessage("Enable Location Provider! Go to settings menu?");
-        alertDialog.setPositiveButton("Settings",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(
-                                Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        MainActivity.this.startActivity(intent);
-                    }
-                });
-        alertDialog.setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        alertDialog.show();
-    }
-    private class GeocoderHandler extends Handler {
-        TextView tvAddress;
-        @Override
-        public void handleMessage(Message message) {
-            String locationAddress;
-            switch (message.what) {
-                case 1:
-                    Bundle bundle = message.getData();
-                    locationAddress = bundle.getString("address");
-                    break;
-                default:
-                    locationAddress = null;
-            }
-            tvAddress.setText(locationAddress);
-        }
-    }
-    public void updateLocation(){
-        appLocationService = new AppLocationService(
-                MainActivity.this);
-        final TextView tvAddress = findViewById(R.id.tvAddress);
-        Button btnGPSShowLocation = findViewById(R.id.btnGPSShowLocation);
-        btnGPSShowLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Location gpsLocation = appLocationService
-                        .getLocation(LocationManager.GPS_PROVIDER);
-                if (gpsLocation != null) {
-                    double latitude = gpsLocation.getLatitude();
-                    double longitude = gpsLocation.getLongitude();
-                    String result = "Latitude: " + gpsLocation.getLatitude() +
-                            " Longitude: " + gpsLocation.getLongitude();
-                    tvAddress.setText(result);
-                } else {
-                    showSettingsAlert();
-                }
-            }
-        });
-        Button btnShowAddress;
-        btnShowAddress = findViewById(R.id.btnShowAddress);
-        btnShowAddress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-
-                Location location = appLocationService
-                        .getLocation(LocationManager.GPS_PROVIDER);
-
-                //you can hard-code the lat & long if you have issues with getting it
-                //remove the below if-condition and use the following couple of lines
-                //double latitude = 37.422005;
-                //double longitude = -122.084095
-
-                if (location != null) {
-                    double latitude = location.getLatitude();
-                    double longitude = location.getLongitude();
-                    LocationAddress locationAddress = new LocationAddress();
-                    locationAddress.getAddressFromLocation(latitude, longitude,
-                            getApplicationContext(), new GeocoderHandler());
-                } else {
-                    showSettingsAlert();
-                }
-
-            }
-        });
-
-    }
 
     public void write(View view){
         EditText e1 = (EditText) findViewById(R.id.editText);

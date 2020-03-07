@@ -36,5 +36,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="experiment_8">Experiment 8</string>
+    <string name="show_location">Show Location</string>
+    <string name="show_address">Show Address</string>
 
 </resources>

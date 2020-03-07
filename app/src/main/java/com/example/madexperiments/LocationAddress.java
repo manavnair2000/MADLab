@@ -24,15 +24,19 @@ public class LocationAddress {
                 String result = null;
                 try {
                     List<Address> addressList = geocoder.getFromLocation(
-                            latitude, longitude, 1);
+                            latitude, longitude, 5);
                     if (addressList != null && addressList.size() > 0) {
                         Address address = addressList.get(0);
                         StringBuilder sb = new StringBuilder();
                         for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
-                            sb.append(address.getAddressLine(i)).append("\n");
+                            sb.append(address.getAddressLine(i)).append("\n\t");
                         }
-                        sb.append(address.getLocality()).append("\n");
-                        sb.append(address.getPostalCode()).append("\n");
+
+                        sb.append(address.getSubLocality()).append(", ");
+                        sb.append(address.getLocality()).append(", ");
+                        sb.append(address.getSubAdminArea()).append(", ");
+                        sb.append(address.getAdminArea()).append(", ");
+                        sb.append(address.getPostalCode()).append(", ");
                         sb.append(address.getCountryName());
                         result = sb.toString();
                     }
@@ -44,8 +48,8 @@ public class LocationAddress {
                     if (result != null) {
                         message.what = 1;
                         Bundle bundle = new Bundle();
-                        result = "Latitude: " + latitude + " Longitude: " + longitude +
-                                "\n\nAddress:\n" + result;
+                        result = "Latitude: " + latitude + "\n\t Longitude: " + longitude +
+                                "\n\tAddress:\t" + result;
                         bundle.putString("address", result);
                         message.setData(bundle);
                     } else {
