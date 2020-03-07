@@ -21,6 +21,8 @@
     <string name="channel_name">Main Notifications</string>
     <string name="channel_description">Make a wish to disable this notification</string>
     <string name="exp_7">Experiment 7</string>
+    <string name="UrlValue">Enter image URL</string>
+    <string name="ImgButton">Show Image</string>
     <string-array name="department">
         <item>BE CSE</item>
         <item>BE IT</item>

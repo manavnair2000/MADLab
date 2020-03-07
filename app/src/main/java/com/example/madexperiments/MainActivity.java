@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -29,11 +31,19 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     float font = 20;
@@ -244,5 +254,46 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 
+    }
+
+
+    public void load(View view) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final Bitmap bit = initImage(((EditText) findViewById(R.id.imageURL)).getText().toString());
+                final ImageView v = findViewById(R.id.appCompatImageView);
+                v.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(bit != null){
+                            v.setImageBitmap(bit);
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"Error Loading Image" ,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+    public static Bitmap initImage(String src){
+        try{
+            URL url = new URL(src);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setDoInput(true);
+            conn.connect();
+            InputStream inp = conn.getInputStream();
+            Bitmap img = BitmapFactory.decodeStream(inp);
+            return img;
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

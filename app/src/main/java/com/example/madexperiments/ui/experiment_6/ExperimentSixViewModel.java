@@ -10,7 +10,7 @@ public class ExperimentSixViewModel extends ViewModel {
 
     public ExperimentSixViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is experiment_6 fragment");
+        mText.setValue("Experiment Six Multithreading.....");
     }
 
     public LiveData<String> getText() {
