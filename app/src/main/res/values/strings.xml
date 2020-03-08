@@ -38,5 +38,6 @@
     <string name="experiment_8">Experiment 8</string>
     <string name="show_location">Show Location</string>
     <string name="show_address">Show Address</string>
+    <string name="message_body">Message Body</string>
 
 </resources>
