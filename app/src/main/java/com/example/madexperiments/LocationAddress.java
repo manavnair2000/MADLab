@@ -24,20 +24,19 @@ public class LocationAddress {
                 String result = null;
                 try {
                     List<Address> addressList = geocoder.getFromLocation(
-                            latitude, longitude, 5);
+                            latitude, longitude, 1);
                     if (addressList != null && addressList.size() > 0) {
                         Address address = addressList.get(0);
                         StringBuilder sb = new StringBuilder();
-                        for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+                        for (int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
                             sb.append(address.getAddressLine(i)).append("\n\t");
                         }
-
-                        sb.append(address.getSubLocality()).append(", ");
-                        sb.append(address.getLocality()).append(", ");
-                        sb.append(address.getSubAdminArea()).append(", ");
-                        sb.append(address.getAdminArea()).append(", ");
-                        sb.append(address.getPostalCode()).append(", ");
-                        sb.append(address.getCountryName());
+//                        sb.append(address.getSubLocality()).append(", ");
+//                        sb.append(address.getLocality()).append(", ");
+//                        sb.append(address.getSubAdminArea()).append(", ");
+//                        sb.append(address.getAdminArea()).append(", ");
+//                        sb.append(address.getPostalCode()).append(", ");
+//                        sb.append(address.getCountryName());
                         result = sb.toString();
                     }
                 } catch (IOException e) {
@@ -48,8 +47,8 @@ public class LocationAddress {
                     if (result != null) {
                         message.what = 1;
                         Bundle bundle = new Bundle();
-                        result = "Latitude: " + latitude + "\n\t Longitude: " + longitude +
-                                "\n\tAddress:\t" + result;
+                        result = " Latitude: " + latitude + "\n\t\t Longitude: " + longitude +
+                                "\n\t\t Address:\t" + result;
                         bundle.putString("address", result);
                         message.setData(bundle);
                     } else {
