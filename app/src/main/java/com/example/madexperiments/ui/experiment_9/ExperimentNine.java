@@ -1,5 +1,6 @@
 package com.example.madexperiments.ui.experiment_9;
 
+
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.madexperiments.R;
 
 public class ExperimentNine extends Fragment {
@@ -27,6 +27,7 @@ public class ExperimentNine extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.experiment_9, container, false);
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
