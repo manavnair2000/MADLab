@@ -31,4 +31,5 @@
 
 ### 11. Develop a mobile application to send an email.
 
-Here's the link to [Source Code](https://github.com/manavnair2000/MADLab/tree/master/app/src/main/java/com/example/madexperiments)
+Here's the link to [Source Code](https://github.com/manavnair2000/MADLab/tree/master/app/src/main/java/com/example/madexperiments) in Java.
+Here's link to XML files for [corresponding UI elements](https://github.com/manavnair2000/MADLab/tree/master/app/src/main/res/layout).
