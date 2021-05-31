@@ -33,3 +33,4 @@
 
 Here's the link to [Source Code](https://github.com/manavnair2000/MADLab/tree/master/app/src/main/java/com/example/madexperiments) in Java.
 Here's link to XML files for [corresponding UI elements](https://github.com/manavnair2000/MADLab/tree/master/app/src/main/res/layout).
+Here's the link to [Android Manifest file](https://github.com/manavnair2000/MADLab/blob/master/app/src/main/AndroidManifest.xml) should you wish to change your permissions for the app.
